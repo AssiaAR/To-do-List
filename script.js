@@ -98,3 +98,20 @@ function loadTasksFromLocalStorage() {
 
 // Load tasks on page load
 loadTasksFromLocalStorage();
+
+const themeBtn= document.getElementById('theme-btn');
+const body = document.body;
+
+body.classList.add('light-theme');
+
+themeBtn.addEventListener('click', () =>{
+  if(body.classList.contains('light-theme')){
+    body.classList.remove('light-theme');
+    body.classList.add('dark-theme');
+    themeBtn.textContent='Switch to Light theme';
+  } else {
+    body.classList.remove('dark-theme');
+    body.classList.add('light-theme');
+    themeBtn.textContent= 'Switch to Dark Theme';
+  }
+});
